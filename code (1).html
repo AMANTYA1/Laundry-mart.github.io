@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Mart - Fresh Clothes, Fresh You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(0, 212, 255, 0.9)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/45c290a2-9e5b-428b-914a-173801d1d783.png') no-repeat center center;
+            background-size: cover;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        .membership-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .membership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
+        }
+        .service-icon {
+            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.2));
+        }
+        footer {
+            background: linear-gradient(to right, #007bff, #0056b3);
+        }
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 2rem;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold text-blue-600">Laundry Mart</h1>
+                <p class="ml-2 text-sm text-gray-600 hidden lg:block">Fresh Clothes, Fresh You</p>
+            </div>
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li><a href="#home" class="hover:text-blue-600 transition duration-200">Home</a></li>
+                <li><a href="#services" class="hover:text-blue-600 transition duration-200">Services</a></li>
+                <li><a href="#membership" class="hover:text-blue-600 transition duration-200">Membership</a></li>
+                <li><a href="#pricing" class="hover:text-blue-600 transition duration-200">Pricing</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 transition duration-200">Contact</a></li>
+            </ul>
+            <button id="menu-toggle" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <ul class="px-4 py-4 space-y-2">
+                <li><a href="#home" class="block py-2 hover:text-blue-600">Home</a></li>
+                <li><a href="#services" class="block py-2 hover:text-blue-600">Services</a></li>
+                <li><a href="#membership" class="block py-2 hover:text-blue-600">Membership</a></li>
+                <li><a href="#pricing" class="block py-2 hover:text-blue-600">Pricing</a></li>
+                <li><a href="#contact" class="block py-2 hover:text-blue-600">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-bg text-white py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Fresh Clothes, Fresh You</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Your smart, convenient laundry partner for doorstep pickup and delivery. Book now and experience hassle-free service!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="cta-button bg-yellow-500 text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-600">Explore Services</a>
+                <button class="cta-button bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600" onclick="showBookingModal()">Book Laundry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Laundry Mart?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b01512b8-ea15-4542-8e26-ff8cf9623760.png" alt="Illustration of a friendly delivery driver handing a laundry bag to a smiling customer at their doorstep with Laundry Mart logo on the bag" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">Doorstep Pickup & Delivery</h3>
+                    <p class="text-gray-600">Hassle-free service at your convenience, right at your doorstep.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/721c58c8-7222-438c-89db-82fc99055b83.png" alt="Modern laundry machines with steaming eco-friendly detergents in a clean, high-tech facility with fabric care icons" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">Premium Wash & Dry Cleaning</h3>
+                    <p class="text-gray-600">Advanced machines and eco-friendly detergents for top-notch care.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/86a73333-568f-468d-b789-4b4d8c5064bd.png" alt="User-friendly mobile app screen showing easy booking button and Laundry Mart logo on smartphone" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">Easy Online Booking</h3>
+                    <p class="text-gray-600">Book in just 2 clicks via website or app.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/44ff8643-629f-493b-ae44-3510d08e5c46.png" alt="Secure payment icons including UPI, credit cards, and wallets with shields indicating safety" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">Secure Online Payments</h3>
+                    <p class="text-gray-600">Pay safely with UPI, cards, or wallets.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/41ba6864-04ec-4dd6-b6cd-1232b16d540d.png" alt="Real-time tracking map showing laundry order in transit with status updates on screen" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">Order Tracking</h3>
+                    <p class="text-gray-600">Stay updated with real-time status.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d75fded3-e996-470e-8add-81ac0c2dd8a1.png" alt="Clock showing 24 hours with laundry symbols and night sky background indicating round-the-clock service" class="service-icon w-32 h-32 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold mb-2">24/7 Availability</h3>
+                    <p class="text-gray-600">Laundry care that fits your lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Wash & Fold</h3>
+                    <p class="text-gray-600 mb-4">Professional washing, drying, and folding for everyday laundry.</p>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Book Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Dry Cleaning</h3>
+                    <p class="text-gray-600 mb-4">Expert care for delicate fabrics and special garments.</p>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Book Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Ironing</h3>
+                    <p class="text-gray-600 mb-4">Perfectly pressed clothes for a professional look.</p>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Book Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-4">Pickup & Delivery</h3>
+                    <p class="text-gray-600 mb-4">Convenient collection and delivery at your location.</p>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Schedule Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section id="membership" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Membership Plans</h2>
+            <p class="text-center text-gray-600 mb-12">Exclusive discounts and priority service to save big on every wash.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="membership-card bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Basic Care Plan</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">Ideal for individuals</p>
+                    <ul class="text-left text-gray-600 mb-6">
+                        <li>• 10% discount on every order</li>
+                        <li>• Free pickup once a month</li>
+                    </ul>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700" onclick="joinPlan('Basic Care')">Join Now</button>
+                </div>
+                <div class="membership-card bg-blue-50 p-6 rounded-lg shadow-md text-center border-4 border-blue-600">
+                    <h3 class="text-2xl font-semibold mb-4">Family Saver Plan</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">Perfect for households</p>
+                    <ul class="text-left text-gray-600 mb-6">
+                        <li>• 15% discount on all services</li>
+                        <li>• Priority pickup & delivery</li>
+                        <li>• Free stain-removal service</li>
+                    </ul>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700" onclick="joinPlan('Family Saver')">Join Now</button>
+                </div>
+                <div class="membership-card bg-gray-100 p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-2xl font-semibold mb-4">Premium Unlimited Plan</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">For busy professionals</p>
+                    <ul class="text-left text-gray-600 mb-6">
+                        <li>• Flat-rate unlimited laundry</li>
+                        <li>• Same-day delivery</li>
+                        <li>• Dedicated support & premium packaging</li>
+                    </ul>
+                    <button class="cta-button bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700" onclick="joinPlan('Premium Unlimited')">Join Now</button>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-semibold mb-4">Laundry Done Right – Delivered at Your Doorstep</h3>
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/46b2f9a9-69e7-48b3-a908-71a2c1ff45e1.png" alt="Diagram illustrating membership benefits with icons of discounts, cleanliness, and fast delivery for family and individual plans, positioned around a central Laundry Mart box" class="rounded-lg shadow-md mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Wash & Fold</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">$4.99/kg</p>
+                    <p class="text-gray-600">Starting from per kg</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Dry Cleaning</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">$9.99/item</p>
+                    <p class="text-gray-600">Shirt, pants, etc.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Ironing</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">$2.99/item</p>
+                    <p class="text-gray-600">Per garment</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Pickup & Delivery</h3>
+                    <p class="text-3xl font-bold text-blue-600 mb-4">$3.99/order</p>
+                    <p class="text-gray-600">Within city area</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8">Prices may vary based on location and order size. Contact us for exact quotes.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4 testimonial-quote">This service has made my life so much easier. No more hassle with laundry! Highly recommended.</p>
+                    <p class="text-sm text-gray-500">- Sarah K., Regular Customer</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4 testimonial-quote">Amazing quality and quick turnaround. The membership plan is a game-changer for my family.</p>
+                    <p class="text-sm text-gray-500">- John M., Family Saver Member</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-600 mb-4 testimonial-quote">Reliable and affordable. Their premium cleaning is top-notch. Will use again.</p>
+                    <p class="text-sm text-gray-500">- Emily R., Premium Member</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <p class="text-gray-600 mb-4">Have questions? Need support? We’re here to help!</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><strong>Address:</strong> 123 Laundry Street, Clean City, CC 12345</li>
+                        <li><strong>Phone:</strong> (123) 456-7890</li>
+                        <li><strong>Email:</strong> <a href="mailto:info@laundrymart.com" class="text-blue-600 hover:underline">info@laundrymart.com</a></li>
+                        <li><strong>Support:</strong> Available 24/7 via app or call</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Send a Message</h3>
+                    <form id="contact-form" class="bg-white p-6 rounded-lg shadow-md">
+                        <input type="text" placeholder="Your Name" id="name" class="w-full p-3 mb-4 border border-gray-300 rounded" required>
+                        <input type="email" placeholder="Your Email" id="email" class="w-full p-3 mb-4 border border-gray-300 rounded" required>
+                        <input type="tel" placeholder="Phone Number" id="phone" class="w-full p-3 mb-4 border border-gray-300 rounded">
+                        <textarea placeholder="Your Message" id="message" class="w-full p-3 mb-4 border border-gray-300 rounded h-32" required></textarea>
+                        <button type="submit" class="cta-button bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 Laundry Mart. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h3 class="text-2xl font-bold mb-4">Book Your Laundry</h3>
+            <form id="booking-form">
+                <select id="service-type" class="w-full p-3 mb-4 border border-gray-300 rounded" required>
+                    <option value="">Select Service</option>
+                    <option value="wash-fold">Wash & Fold</option>
+                    <option value="dry-cleaning">Dry Cleaning</option>
+                    <option value="ironing">Ironing</option>
+                </select>
+                <input type="number" placeholder="Weight (kg)" id="weight" class="w-full p-3 mb-4 border border-gray-300 rounded">
+                <input type="text" placeholder="Address" id="address" class="w-full p-3 mb-4 border border-gray-300 rounded" required>
+                <button type="submit" class="cta-button bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 w-full">Book Now</button>
+            </form>
+            <button id="close-modal" class="mt-4 text-gray-600 hover:text-gray-800">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Booking Modal
+        function showBookingModal() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        });
+
+        // Form Submissions
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Booking received! Order tracking details will be sent via SMS/email.');
+            this.reset();
+            document.getElementById('booking-modal').classList.add('hidden');
+        });
+
+        // Membership Join
+        function joinPlan(plan) {
+            alert(`Thank you for joining the ${plan} Plan! We\'ll send signup details soon.`);
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
